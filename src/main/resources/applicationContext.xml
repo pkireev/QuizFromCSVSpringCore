@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dao" class="dev.erp.quizcsv.dao.DAOCSVReader">
+        <constructor-arg name="container" ref="container" />
+        <constructor-arg name="filename" value="src/main/resources/quiz.csv" />
+    </bean>
+
+    <bean id="container" class="dev.erp.quizcsv.model.QuizContainer" />
+    <bean id="input" class="dev.erp.quizcsv.controller.ConsoleInput" />
+    <bean id="output" class="dev.erp.quizcsv.view.PrintToScreen" />
+
+</beans>
